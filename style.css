@@ -1,0 +1,311 @@
+/* custom properties --------------- */
+:root {
+  /* color */
+  --clr-red: 0 100% 66%;
+  --clr-white: 0 0% 100%;
+  --clr-light-grayish-violet: 270 3% 87%;
+  --clr-dark-grayish-violet: 279 6% 55%;
+  --clr-very-dark-violet: 278 68% 11%;
+
+  /* gradient colors */
+  --clr-gradient: hsl(249, 99%, 64%), hsl(278, 94%, 30%);
+
+  /* font family */
+  --ff-space-grotesk: "Space Grotesk", sans-serif;
+}
+
+/* reset ---------------------- */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* utilities -------------------- */
+body {
+  font-family: var(--ff-space-grotesk);
+  font-size: 18px;
+}
+
+.container {
+  padding: 0 20px;
+}
+
+.hide {
+  display: none;
+}
+
+/* page style ------------ */
+.card {
+  width: 100%;
+  height: 240px;
+  background-image: url(./images/bg-main-mobile.png);
+  margin-bottom: 80px;
+}
+
+.card__wrapper {
+  position: relative;
+  width: 340px;
+  margin-inline: auto;
+}
+
+.card__back {
+  width: 285px;
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+
+.card__front {
+  width: 285px;
+  position: absolute;
+  top: 125px;
+  left: 0;
+}
+
+.form {
+  width: 340px;
+  margin-inline: auto;
+  padding-bottom: 100px;
+}
+
+.form__label {
+  color: hsl(var(--clr-very-dark-violet));
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form__input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid hsl(var(--clr-light-grayish-violet));
+  outline-color: hsl(var(--clr-very-dark-violet) / 0.8);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.form__input::placeholder {
+  color: hsl(var(--clr-dark-grayish-violet));
+}
+
+.form__time-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__time {
+  border: 1px solid hsl(var(--clr-light-grayish-violet));
+  border-radius: 8px;
+  padding: 12px 14px;
+  cursor: pointer;
+}
+
+.form__time20 {
+  width: 20%;
+}
+
+.form__time50 {
+  width: 50%;
+}
+
+.form__btn {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  padding: 18px 0;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  color: hsl(var(--clr-white));
+  background-color: hsl(var(--clr-very-dark-violet));
+  cursor: pointer;
+}
+
+.massage {
+  text-align: center;
+  width: 330px;
+  margin-inline: auto;
+}
+
+.massage__img {
+  display: initial;
+  margin-bottom: 40px;
+}
+
+.massage__title {
+  color: hsl(var(--clr-very-dark-violet));
+  margin-bottom: 20px;
+}
+
+.massage__desc {
+  color: hsl(var(--clr-dark-grayish-violet));
+  font-size: 16px;
+}
+
+.massage__btn {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  padding: 18px 0;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  color: hsl(var(--clr-white));
+  background-color: hsl(var(--clr-very-dark-violet));
+  cursor: pointer;
+  margin-bottom: 60px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* media query */
+@media only screen and (min-width: 768px) {
+  .card {
+    margin-bottom: 120px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    height: 900px;
+    position: relative;
+  }
+
+  main {
+    display: flex;
+  }
+
+  .card {
+    width: 33.545%;
+    height: 900px;
+    background-image: url(./images/bg-main-desktop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    margin-bottom: 0;
+    margin-right: 23.7%;
+  }
+
+  .card__wrapper {
+    width: 545px;
+    margin-left: 60px;
+  }
+
+  .card__back {
+    width: 445px;
+    position: absolute;
+    top: 470px;
+    right: 0;
+  }
+
+  .card__front {
+    width: 445px;
+    position: absolute;
+    top: 185px;
+    left: 0;
+  }
+
+  .form,
+  .massage {
+    padding: 260px 0;
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-left: 100px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .card__wrapper {
+    margin-left: 160px;
+  }
+}

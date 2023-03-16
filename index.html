@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!-- page title -->
+    <title>Interactive card details form</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css file -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="./dist/css/style.css" />
+  </head>
+  <body>
+    <!-- main  -->
+    <main>
+      <!-- card section -->
+      <section class="card">
+        <div class="card__wrapper">
+          <div class="card__back">
+            <img
+              src="./images/bg-card-back.png"
+              alt="image of card back side"
+            />
+            <span class="card__back-number" id="display-serial">000</span>
+          </div>
+          <div class="card__front">
+            <img
+              src="./images/bg-card-front.png"
+              alt="image of card front side"
+            />
+            <div class="card__front-details">
+              <img
+                class="card__front-image"
+                src="./images/card-logo.svg"
+                alt="logo of card"
+              />
+              <p class="card__front-number" id="display-number">
+                0000 0000 0000 0000
+              </p>
+              <div class="card__name-date">
+                <p id="display-name">Jane Appleseed</p>
+                <p>
+                  <span id="display-month">00 </span>/
+                  <span id="display-year"> 00</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- form and message section -->
+      <section class="container">
+        <!-- form -->
+        <form action="" class="form" id="form">
+          <!-- name -->
+          <label class="form__label" for="full-name">Cardholder Name</label>
+          <input
+            class="form__input"
+            id="full-name"
+            type="text"
+            placeholder="e.g. Jane Appleseed"
+          />
+          <div class="form__warning" id="name-warning">
+            Please enter your full name
+          </div>
+          <!-- card number -->
+          <label class="form__label" for="card-number">Card Number</label>
+          <input
+            class="form__input"
+            id="card-number"
+            type="number"
+            placeholder="e.g. 1234 5678 9123 0000"
+          />
+          <div class="form__warning" id="number-warning"></div>
+          <!-- expair date -->
+          <div class="form__exp">
+            <label class="form__label" for="card-number"
+              >Exp. Date (MM/YY)</label
+            >
+            <div class="form__time-wrap">
+              <input
+                class="form__time form__time20"
+                id="month"
+                type="number"
+                min="01"
+                max="12"
+                placeholder="MM"
+              />
+              <input
+                class="form__time form__time20"
+                id="year"
+                type="number"
+                placeholder="YY"
+              />
+              <input
+                class="form__time form__time50"
+                id="serial-input"
+                type="number"
+                placeholder="e.g. 123"
+              />
+              <div
+                class="form__warning form__warning-date"
+                id="month-year"
+              ></div>
+              <div class="form__warning form__warning-num" id="serial">
+                Can't be blank
+              </div>
+            </div>
+          </div>
+
+          <!-- confirm btn -->
+          <button class="form__btn" id="btn" type="button">Confirm</button>
+        </form>
+
+        <!-- confirm message  -->
+        <div class="message hide" id="message">
+          <img
+            class="message__img"
+            src="./images/icon-complete.svg"
+            alt="image of complete message"
+          />
+          <h2 class="message__title">THANK YOU!</h2>
+          <p class="message__desc">We've added your card details Continue</p>
+          <button class="message__btn" type="button" id="continue-btn">
+            Continue
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <div class="footer-wrap">
+      <footer class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="http://github.com/tahmidul40">Tahmidul</a>.
+      </footer>
+    </div>
+
+    <!-- js file -->
+    <script src="./app/js/script.js"></script>
+  </body>
+</html>
